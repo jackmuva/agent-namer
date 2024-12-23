@@ -3,12 +3,14 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col space-y-4 h-svh justify-center items-center font-['Helvetica'] text-white">
-      <div className="text-2xl md:text-3xl font-semibold">
-        You&apos;ve built your AI agent...
-      </div>
-      <div className=" font-bold text-2xl md:text-4xl ">
-        More imporantly, what will you name it?
+    <div className="flex flex-col py-24 h-full min-h-screen space-y-10 justify-center items-center font-['Helvetica'] text-white">
+      <div className="flex flex-col space-y-4 justify-center items-center">
+        <div className="text-2xl md:text-3xl font-semibold">
+          You&apos;ve built your AI agent...
+        </div>
+        <div className=" font-bold text-2xl md:text-4xl ">
+          More imporantly, what will you name it?
+        </div>
       </div>
       <div className="flex flex-col space-y-1 md:w-[500px] items-center">
         <div className="text-2xl ">
