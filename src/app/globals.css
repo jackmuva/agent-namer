@@ -6,7 +6,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   height:100vh;
   background-color: #3d0ef7;
-  background-image: linear-gradient(170deg, #3d0ef7 0%, #000408 78%);
+  background-image: linear-gradient(170deg, #6949E7 0%, #000408 78%);
 }
 
 @layer base {

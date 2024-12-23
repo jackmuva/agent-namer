@@ -8,7 +8,7 @@ export default function Home() {
         You've built your AI agent...
       </div>
       <div className=" font-bold text-4xl ">
-        Are you ready to name your AI agent?
+        More imporantly, what will you name it?
       </div>
       <AgentForm></AgentForm>
     </div>

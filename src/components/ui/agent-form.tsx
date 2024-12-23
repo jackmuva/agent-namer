@@ -15,10 +15,13 @@ import {
 import { Textarea } from "./textarea";
 import { useState } from "react";
 import { ProgressBar } from "./progress-bar";
+import { Input } from "./input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./select";
 
 const formSchema = z.object({
   description: z.string(),
-  keywords: z.string()
+  gender: z.string(),
+  website: z.string()
 });
 
 export default function AgentForm() {
@@ -28,15 +31,17 @@ export default function AgentForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       description: "",
-      keywords: ""
+      gender: "",
+      website: ""
     }
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values);
     setFormState({ names: "", loading: true });
     const response = await fetch(window.location.href + "api/generate", {
       method: "POST",
-      body: JSON.stringify({ description: values.description, keywords: values.keywords })
+      body: JSON.stringify({ description: values.description, gender: values.gender, website: values.website })
     });
     const body = await response.json();
     console.log(body);
@@ -50,6 +55,21 @@ export default function AgentForm() {
     <div className="w-1/3 bg-stone-900 p-4 rounded-xl shadow-2xl border-2 border-stone-600">
       {formState.names === "" && <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <FormField
+            control={form.control}
+            name="website"
+            render={({ field }) => (
+              <FormItem>
+                <FormDescription>
+                  We'll check out your company website to help us name your agent
+                </FormDescription>
+                <FormControl>
+                  <Input type="text" placeholder="Company Website" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <FormField
             control={form.control}
             name="description"
@@ -67,15 +87,24 @@ export default function AgentForm() {
           />
           <FormField
             control={form.control}
-            name="keywords"
+            name="gender"
             render={({ field }) => (
               <FormItem>
-                <FormDescription>
-                  Any must-have keywords for your agent's name
-                </FormDescription>
-                <FormControl>
-                  <Textarea placeholder="Keywords" {...field} />
-                </FormControl>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormDescription>
+                    Preferred gender of your AI agent
+                  </FormDescription>
+                  <FormControl>
+                    <SelectTrigger className="text-gray-500">
+                      <SelectValue placeholder="unisex" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="unisex">unisex</SelectItem>
+                    <SelectItem value="male">male</SelectItem>
+                    <SelectItem value="female">female</SelectItem>
+                  </SelectContent>
+                </Select>
                 <FormMessage />
               </FormItem>
             )}
