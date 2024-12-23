@@ -16,8 +16,8 @@ export async function generateNames(description: string, keywords: string): Prom
 						"type": "text",
 						"text": `You are a helpful assistant tasked with coming up with names for AI agent applications.
 		Use the description provided by the user to come up with names. If keywords are provided,
-		you must use at least one of those keywords in your AI agent names. If no descriptions or keywords are given, be creative! Come up with at least 
-		five names. Only provide the names, no other context is needed.`
+		you must use at least one of those keywords in your AI agent names. If no descriptions or keywords are given, be creative! Come up with 
+		three normal names and two fun names. Only provide the names.`
 					}
 				]
 			},
