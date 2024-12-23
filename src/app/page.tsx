@@ -1,4 +1,5 @@
 import AgentForm from "@/components/ui/agent-form";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -10,6 +11,21 @@ export default function Home() {
         More imporantly, what will you name it?
       </div>
       <AgentForm></AgentForm>
+      <a
+        href="https://www.useparagon.com/"
+        target="_blank"
+        className="flex items-center justify-center font-nunito text-lg font-bold gap-2"
+      >
+        <Image
+          className="rounded-xl"
+          src="/paragon-logo.png"
+          alt="Paragon Logo"
+          width={30}
+          height={30}
+          priority
+        />
+        <span>Paragon - Equip your agent with integrations</span>
+      </a>
     </div>
   );
 }
