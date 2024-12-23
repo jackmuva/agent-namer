@@ -51,7 +51,7 @@ export default function AgentForm() {
     setFormState({ names: "", loading: false });
   }
   return (
-    <div className="w-1/3 bg-stone-900 p-4 rounded-xl shadow-2xl border-2 border-stone-600">
+    <div className="w-full bg-stone-900 p-4 rounded-xl shadow-2xl border-2 border-stone-600">
       {formState.names === "" && <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
