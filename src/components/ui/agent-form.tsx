@@ -9,7 +9,6 @@ import {
   FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form"
 import { Textarea } from "./textarea";
@@ -61,7 +60,7 @@ export default function AgentForm() {
             render={({ field }) => (
               <FormItem>
                 <FormDescription>
-                  We'll check out your company website to help us name your agent
+                  We&apos;ll check out your company website to help us name your agent
                 </FormDescription>
                 <FormControl>
                   <Input type="text" placeholder="Company Website" {...field} />
