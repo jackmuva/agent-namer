@@ -51,7 +51,7 @@ export default function AgentForm() {
     setFormState({ names: "", loading: false });
   }
   return (
-    <div className="w-full bg-stone-900 p-4 rounded-xl shadow-2xl border-2 border-stone-600">
+    <div className="w-full bg-stone-900 p-4 rounded-xl shadow-2xl border-2 border-stone-600 ">
       {formState.names === "" && <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
@@ -60,7 +60,7 @@ export default function AgentForm() {
             render={({ field }) => (
               <FormItem>
                 <FormDescription>
-                  We&apos;ll check out your company website to help us name your agent
+                  Share your website to help our name generator get to know your AI agent better
                 </FormDescription>
                 <FormControl>
                   <Input type="text" placeholder="Company Website" {...field} />
