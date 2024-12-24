@@ -8,7 +8,7 @@ export default function Home() {
         <div className="text-2xl md:text-3xl font-semibold">
           You&apos;ve built your AI agent...
         </div>
-        <div className=" font-bold text-2xl md:text-4xl ">
+        <div className=" font-bold text-2xl md:text-4xl flex justify-center items-center">
           More imporantly, what will you name it?
         </div>
       </div>
@@ -34,7 +34,7 @@ export default function Home() {
           />
           <span>Paragon</span>
         </div>
-        <div className="text-2xl font-bold">
+        <div className="text-2xl font-bold flex justify-center items-center">
           Equip your AI agent with integrations
         </div>
       </a>
