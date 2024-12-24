@@ -9,7 +9,7 @@ export default function Home() {
           You&apos;ve built your AI agent...
         </div>
         <div className=" font-bold text-xl md:text-4xl flex items-center justify-center">
-          More imporantly, what will you name it?
+          More importantly, what will you name it?
         </div>
       </div>
       <div className="flex flex-col space-y-1 md:w-[500px] items-center px-2">
