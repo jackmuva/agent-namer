@@ -16,9 +16,10 @@ const pgClient = new Client({
 await pgClient.connect();
 
 await pgClient.query(`
-    CREATE TABLE VISITORS(
+    CREATE TABLE VISITOR_INFO(
         website VARCHAR(255),
-        datetime VARCHAR(255)
+        datetime VARCHAR(255),
+	description TEXT
     )
 `);
 

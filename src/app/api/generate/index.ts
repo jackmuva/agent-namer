@@ -16,7 +16,8 @@ export async function generateNames(description: string, gender: string): Promis
 						"type": "text",
 						"text": `You are a helpful assistant tasked with coming up with names for AI agent applications.
 		Names are in the format <FIRST NAME> the <TITLE>. An example is "Brian the AI notetaker."
-		Use the description provided by the user to come up with names. Use the gender provided to pick first names of that gender. 
+		Use the description provided by the user to come up with names. If a title is given in the description, use that title in the first generated name.
+		Use the gender provided to pick first names of that gender. 
 		If no description is given, be creative! Come up with 
 		two normal names and one funny name. Only provide the names.`
 					}

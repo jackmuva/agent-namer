@@ -16,8 +16,8 @@ const pool = new Pool({
 export const insertRecord = async (record) => {
 	let result = {}
 	try {
-		const text = 'INSERT INTO VISITORS(website, datetime) VALUES($1, $2) RETURNING *'
-		const values = [record.website, record.datetime]
+		const text = 'INSERT INTO VISITOR_INFO(website, datetime, description) VALUES($1, $2, $3) RETURNING *'
+		const values = [record.website, record.datetime, record.description]
 
 		const res = await pool.query(text, values);
 		result = res.rows[0];
